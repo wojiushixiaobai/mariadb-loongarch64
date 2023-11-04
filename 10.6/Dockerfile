@@ -33,13 +33,15 @@ RUN set -ex \
     esac;
 
 RUN set -ex \
-    apt-get update \
-    mk-build-deps -t "apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends -y" -i /opt/mariadb/mariadb-${VERSION}/debian/control
+    && apt-get update \
+    && cd mariadb-${VERSION} \
+    && AUTOBAKE_PREP_CONTROL_RULES_ONLY=true ./debian/autobake-deb.sh \
+    && mk-build-deps -t "apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends -y" -i debian/control
 
 RUN set -ex \
-    && cd /opt/mariadb/mariadb-${VERSION} \
+    && cd mariadb-${VERSION} \
     && ./debian/autobake-deb.sh \
-    && cd /opt/mariadb \
+    && cd .. \
     && rm -rf mariadb-${VERSION}
 
 FROM debian:buster-slim
