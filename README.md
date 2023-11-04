@@ -1,0 +1,2 @@
+# mariadb-loongarch64
+ 
