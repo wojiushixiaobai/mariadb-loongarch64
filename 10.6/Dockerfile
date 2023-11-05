@@ -24,7 +24,7 @@ RUN set -ex \
     arch="$(dpkg --print-architecture)"; arch="${arch##*-}"; \
     case "$arch" in \
         loongarch64) \
-            sed -i 's@^LSBID=.*@LSBID="Debian"@g' mariadb-${VERSION}/debian/autobake-deb.sh; \
+            sed -i 's@^LSBID=.*@LSBID="debian"@g' mariadb-${VERSION}/debian/autobake-deb.sh; \
             sed -i 's@^LSBVERSION=.*@LSBVERSION="10"@g' mariadb-${VERSION}/debian/autobake-deb.sh; \
             sed -i 's@^LSBNAME=.*@LSBNAME="buster"@g' mariadb-${VERSION}/debian/autobake-deb.sh; \
             ;; \
