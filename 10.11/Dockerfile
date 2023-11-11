@@ -19,18 +19,7 @@ WORKDIR /opt/mariadb
 RUN set -ex \
     && wget -q http://downloads.mariadb.org/rest-api/mariadb/${VERSION}/mariadb-${VERSION}.tar.gz \
     && tar -xf mariadb-${VERSION}.tar.gz \
-    && rm -f mariadb-${VERSION}.tar.gz \
-    && \
-    arch="$(dpkg --print-architecture)"; arch="${arch##*-}"; \
-    case "$arch" in \
-        loongarch64) \
-            sed -i 's@^LSBID=.*@LSBID="debian"@g' mariadb-${VERSION}/debian/autobake-deb.sh; \
-            sed -i 's@^LSBVERSION=.*@LSBVERSION="10"@g' mariadb-${VERSION}/debian/autobake-deb.sh; \
-            sed -i 's@^LSBNAME=.*@LSBNAME="buster"@g' mariadb-${VERSION}/debian/autobake-deb.sh; \
-            ;; \
-        *) echo "$arch"; \
-            ;; \
-    esac;
+    && rm -f mariadb-${VERSION}.tar.gz
 
 RUN set -ex \
     && apt-get update \
