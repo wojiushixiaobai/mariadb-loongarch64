@@ -12,7 +12,7 @@ RUN set -ex \
     && apt-get install -y ${BUILD_DEPENDENCIES} \
     && echo "no" | dpkg-reconfigure dash
 
-ARG VERSION=10.11.5
+ARG VERSION=10.11.6
 
 WORKDIR /opt/mariadb
 
