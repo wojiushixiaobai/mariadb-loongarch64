@@ -41,7 +41,8 @@ RUN set -ex \
     && GALERA_VERSION=$(cat /opt/galera_version.txt) \
     && cd galera-${GALERA_VERSION} \
     # https://github.com/codership/galera/issues/652
-    && DEB_BUILD_OPTIONS="nocheck" dpkg-buildpackage -us -uc -I \
+    && sed -i "s@dh_auto_test @# dh_auto_test @g" debian/rules \
+    && ./scripts/build.sh -p \
     && cd .. \
     && rm -rf galera-${GALERA_VERSION}
 
