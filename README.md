@@ -15,17 +15,17 @@ confidence.
 ### Debian buster (10)
 
 ```sh
-# MariaDB 10.6.16
-wget -qO - https://dl.cloudsmith.io/public/jumpserver/mariadb-10-6-16/gpg.B47668A04ABEE742.key | gpg --dearmor > /etc/apt/trusted.gpg.d/jumpserver-mariadb.gpg
+# MariaDB 10.6.17
+wget -qO - https://dl.cloudsmith.io/public/jumpserver/mariadb-10-6-17/gpg.13C7B05B05FFF144.key | gpg --dearmor > /etc/apt/trusted.gpg.d/jumpserver-mariadb.gpg
 
-echo "deb [arch=loongarch64] https://dl.cloudsmith.io/public/jumpserver/mariadb-10-6-16/deb/debian buster main" > /etc/apt/sources.list.d/jumpserver-mariadb.list
+echo "deb [arch=loongarch64] https://dl.cloudsmith.io/public/jumpserver/mariadb-10-6-17/deb/debian buster main" > /etc/apt/sources.list.d/jumpserver-mariadb.list
 ```
 
 ```sh
-# MariaDB 10.11.6
-wget -qO - https://dl.cloudsmith.io/public/jumpserver/mariadb-10-6-16/gpg.714A71B00036D18E.key | gpg --dearmor > /etc/apt/trusted.gpg.d/jumpserver-mariadb.gpg
+# MariaDB 10.11.7
+wget -qO - https://dl.cloudsmith.io/public/jumpserver/mariadb-10-11-7/gpg.ED79212F8494B6DD.key | gpg --dearmor > /etc/apt/trusted.gpg.d/jumpserver-mariadb.gpg
 
-echo "deb [arch=loongarch64] https://dl.cloudsmith.io/public/jumpserver/mariadb-10-11-6/deb/debian buster main" > /etc/apt/sources.list.d/jumpserver-mariadb.list
+echo "deb [arch=loongarch64] https://dl.cloudsmith.io/public/jumpserver/mariadb-10-11-7/deb/debian buster main" > /etc/apt/sources.list.d/jumpserver-mariadb.list
 ```
 
 
